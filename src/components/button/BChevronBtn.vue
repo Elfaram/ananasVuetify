@@ -1,7 +1,7 @@
 <template>
-  <div v-if="profilNext" align="center" class="d-flex mb-6">
+  <div v-if="profilNext" align="center" class="d-flex">
     <VRow>
-      <VCol cols="2" class="ma-2 pa-2 me-auto">
+      <VCol cols="2" class="ma-8 pa-4 me-auto">
         <VBtn
           :color="color"
           icon="mdi-chevron-left"
@@ -10,7 +10,7 @@
         />
         <p>Previous</p>
       </VCol>
-      <VCol cols="2" class="ma-2 pa-2">
+      <VCol cols="2" class="ma-8 pa-4">
         <VBtn
           :color="color"
           icon="mdi-chevron-right"

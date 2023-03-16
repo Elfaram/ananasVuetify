@@ -1,5 +1,5 @@
 <template>
-  <VCard width="97%" height="auto">
+  <VCard width="100%" height="auto">
     <ProfilInfoCard ref="profilInfoCard" />
     <VForm ref="form" lazy-validation>
       <VCol>
@@ -82,6 +82,7 @@ export default defineComponent({
       //envoi de la data
       console.log(data);
       this.$refs.profilInfoCard.nextProfil();
+      this.resetForm();
     },
     resetForm: function () {
       this.note = "Take some notes";

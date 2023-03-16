@@ -1,28 +1,41 @@
 <template>
-  <VLayout>
+  <VCard>
     <VNavigationDrawer
+      style="height: 6vh"
       v-model="drawer"
-      :rail="rail"
-      permanent
+      :railWidth="2000"
+      width="35vw"
+      :rail="!rail"
       @click="rail = false"
       location="right"
-      class="bg-indigo"
+      class="bg-primary"
     >
-      <BChevronBtn @clickClose="toggleRail" :color="color" :icon="railIcon" />
-      <VDivider />
+      <VRow justify="start">
+        <div style="display: flex">
+          <div class="pt-2">
+            <BChevronBtn
+              @click.stop="rail = !rail"
+              :color="color"
+              :icon="railIcon"
+            />
+          </div>
 
-      <VList>
-        <VListItem
-          v-for="(item, i) in items"
-          :key="i"
-          :prepend-icon="item.icon"
-          :title="item.title"
-          :value="item.value"
-        ></VListItem>
-      </VList>
+          <div v-if="!rail" class="pt-1">
+            <VList>
+              <VListItem
+                v-for="(item, i) in items"
+                :key="i"
+                :title="item.title"
+                :value="item.value"
+              >
+              </VListItem>
+            </VList>
+          </div>
+        </div>
+      </VRow>
     </VNavigationDrawer>
     <ContactView />
-  </VLayout>
+  </VCard>
 </template>
 
 <script lang="ts">
@@ -38,20 +51,13 @@ export default defineComponent({
     return {
       drawer: true,
       rail: true,
-      color: "grey",
+      color: "secondary",
       items: [{ icon: "mdi-phone", title: "Appel 1/12", value: "call" }],
     };
   },
   computed: {
     railIcon() {
       return this.rail ? "mdi-chevron-left" : "mdi-chevron-right";
-    },
-  },
-
-  methods: {
-    toggleRail() {
-      this.rail = !this.rail;
-      this.$emit("clickClose");
     },
   },
 });
