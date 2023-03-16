@@ -33,7 +33,7 @@
           />
         </div>
       </VCol>
-      <VCol align="center" class="mb-2">
+      <VCol align="center" class="pr-12">
         <BSave @click="veriFormAndNext" />
       </VCol>
     </VForm>

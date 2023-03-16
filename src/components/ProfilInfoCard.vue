@@ -7,7 +7,7 @@
     @nextBtn="nextProfil"
   />
   <div>
-    <div>
+    <div class="pl-16 ml-12">
       <VRow justify="center">
         <VAvatar size="98px">
           <VImg :src="profil.picture" alt="Profil picture"

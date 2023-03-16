@@ -21,12 +21,14 @@
       </VCol>
     </VRow>
   </div>
-  <VBtn
-    :color="color"
-    :icon="icon"
-    variant="text"
-    @click="$emit('clickClose')"
-  />
+  <div v-else>
+    <VBtn
+      :color="color"
+      :icon="icon"
+      variant="text"
+      @click="$emit('clickClose')"
+    />
+  </div>
 </template>
 
 <script lang="ts">
