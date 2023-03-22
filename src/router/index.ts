@@ -1,27 +1,46 @@
-// Composables
 import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
-  {
-    path: "/",
-    component: () => import("@/layouts/default/Default.vue"),
-    children: [
-      {
-        path: "",
-        name: "Home",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-          import(/* webpackChunkName: "home" */ "@/views/ContactView.vue"),
-      },
-    ],
-  },
-];
+// Views
+import Acceuil from "@/views/Acceuil.vue";
+import ContactView from "@/views/ContactView.vue";
+import NotFound from "@/views/NotFound.vue";
+
+// Layouts
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      component: Acceuil,
+      children: [
+        {
+          path: "/",
+          redirect: { name: "acceuil" },
+        },
+
+        {
+          path: "/acceuil",
+          name: "acceuil",
+          component: Acceuil,
+        },
+      ],
+    },
+    {
+      path: "/contacts",
+      name: "contacts",
+      component: ContactView,
+    },
+    {
+      path: "/404",
+      name: "404",
+      component: NotFound,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: "/404",
+    },
+  ],
 });
 
 export default router;

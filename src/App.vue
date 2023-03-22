@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view :key="$route.path" />
 </template>
 
 <script lang="ts">
@@ -12,9 +12,7 @@ export default defineComponent({
   components: { RouterView },
 
   data() {
-    return {
-      //
-    };
+    return {};
   },
 });
 </script>

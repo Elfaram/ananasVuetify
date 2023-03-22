@@ -1,17 +1,13 @@
 <template>
-  <VApp>
-    <AppBar />
-  </VApp>
+  <VRow justify="center" align="center" style="height: 100vh">
+    <h1>404 Page not found</h1>
+  </VRow>
 </template>
 
 <script lang="ts">
-import AppBar from "./AppBar.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Home",
-  components: { AppBar },
-
-  methods: {},
+  name: "NotFound",
 });
 </script>
