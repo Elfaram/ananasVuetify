@@ -1,5 +1,7 @@
 <template>
-  <router-view :key="$route.path" />
+  <VApp>
+    <router-view :key="$route.path" />
+  </VApp>
 </template>
 
 <script lang="ts">

@@ -1,51 +1,53 @@
 <template>
-  <VCard>
-    <VNavigationDrawer
-      style="height: 6vh"
-      v-model="drawer"
-      :railWidth="2000"
-      width="35vw"
-      :rail="!rail"
-      @click="rail = false"
-      location="right"
-      class="bg-primary"
-    >
-      <VRow justify="start">
-        <div style="display: flex">
-          <div class="pt-2">
-            <BChevronBtn
-              @click.stop="rail = !rail"
-              :color="color"
-              :icon="railIcon"
-            />
-          </div>
+  <VNavigationDrawer
+    style="height: 6vh"
+    v-model="drawer"
+    :railWidth="2000"
+    width="35vw"
+    :rail="!rail"
+    @click="rail = false"
+    location="right"
+    class="bg-primary"
+    permanent
+  >
+    <VRow>
+      <div class="ma-2 pb-2 me-auto">
+        <BChevronBtn
+          @click.stop="rail = !rail"
+          :color="color"
+          :icon="railIcon"
+        />
+      </div>
 
-          <div v-if="!rail" class="pt-1">
-            <VList>
-              <VListItem
-                v-for="(item, i) in items"
-                :key="i"
-                :title="item.title"
-                :value="item.value"
-              >
-              </VListItem>
-            </VList>
-          </div>
-        </div>
-      </VRow>
-    </VNavigationDrawer>
-    <ContactView />
-  </VCard>
+      <div v-if="!rail" class="pb-2 me-auto">
+        <VList>
+          <VListItem
+            v-for="(item, i) in items"
+            :key="i"
+            :title="item.title"
+            :value="item.value"
+          >
+          </VListItem>
+        </VList>
+      </div>
+      <div class="pb-2">
+        <BHome :color="color" @click="$router.push({ name: 'acceuil' })" />
+      </div>
+    </VRow>
+  </VNavigationDrawer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
+// Components
 import BChevronBtn from "@/components/button/BChevronBtn.vue";
-import ContactView from "@/views/ContactView.vue";
+import BHome from "./button/BHome.vue";
+
 export default defineComponent({
   name: "AppBar",
 
-  components: { BChevronBtn, ContactView },
+  components: { BChevronBtn, BHome },
 
   data() {
     return {

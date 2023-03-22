@@ -1,5 +1,6 @@
 <template>
-  <VCard width="100%" height="auto">
+  <AppBar />
+  <VCard height="auto">
     <ProfilInfoCard ref="profilInfoCard" />
     <VForm ref="form" lazy-validation>
       <VCol>
@@ -46,13 +47,14 @@ import { defineComponent } from "vue";
 // Components
 import BSave from "@/components/button/BSave.vue";
 import ProfilInfoCard from "@/components/ProfilInfoCard.vue";
+import AppBar from "@/components/AppBar.vue";
 
 // Const
 import rules from "@/const/rules";
 
 export default defineComponent({
-  name: "Home",
-  components: { BSave, ProfilInfoCard },
+  name: "ContactView",
+  components: { BSave, ProfilInfoCard, AppBar },
 
   data() {
     return {

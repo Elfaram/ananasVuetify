@@ -1,6 +1,7 @@
 <template>
-  <VCard class="bg-primary text-center d-flex flex-column" height="40vh">
+  <VCard class="bg-primary text-center d-flex flex-column">
     <div>
+      <!-- refact VBtn -> component reutilisable -->
       <VBtn
         v-for="icon in icons"
         :key="icon"
@@ -10,7 +11,7 @@
         size="x-large"
       ></VBtn>
     </div>
-    <VDivider />
+    <VDivider thickness="3px" />
 
     <div class="mx-4">
       <p class="font-weight-thin mt-4">
@@ -26,7 +27,7 @@
     </div>
     <br />
     <VDivider thickness="3px" />
-    <div class="mt-4">
+    <div class="mt-2">
       <VBtn
         v-for="icon in iconsTech"
         :key="icon"

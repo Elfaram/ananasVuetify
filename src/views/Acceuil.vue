@@ -23,7 +23,7 @@
                   label="E-mail"
                   variant="outlined"
                   clearable
-                  :rules="[rules.required]"
+                  :rules="[rules.requiredEmailValid]"
                   append-icon="mdi-at"
                 />
 
