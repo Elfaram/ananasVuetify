@@ -1,7 +1,7 @@
 <template>
   <VBtn
     size="small"
-    icon="mdi-home"
+    icon="mdi-logout"
     :color="color"
     variant="text"
     class="my-3 mr-2"

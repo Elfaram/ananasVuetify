@@ -31,7 +31,7 @@
         </VList>
       </div>
       <div class="pb-2">
-        <BHome :color="color" @click="$router.push({ name: 'acceuil' })" />
+        <BHome :color="color" @click="$router.push({ name: 'accueil' })" />
       </div>
     </VRow>
   </VNavigationDrawer>

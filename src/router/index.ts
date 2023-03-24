@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // Views
-import Acceuil from "@/views/Acceuil.vue";
+import Accueil from "@/views/Accueil.vue";
 import ContactView from "@/views/ContactView.vue";
 import NotFound from "@/views/NotFound.vue";
 
@@ -12,17 +12,17 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: Acceuil,
+      component: Accueil,
       children: [
         {
           path: "/",
-          redirect: { name: "acceuil" },
+          redirect: { name: "accueil" },
         },
 
         {
-          path: "/acceuil",
-          name: "acceuil",
-          component: Acceuil,
+          path: "/accueil",
+          name: "accueil",
+          component: Accueil,
         },
       ],
     },

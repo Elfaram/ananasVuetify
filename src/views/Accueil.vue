@@ -66,7 +66,7 @@ import InformationFooter from "@/components/InformationFooter.vue";
 import rules from "@/const/rules";
 
 export default defineComponent({
-  name: "Acceuil",
+  name: "Accueil",
   components: {
     InformationFooter,
   },
